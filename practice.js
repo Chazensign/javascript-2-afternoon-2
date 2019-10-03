@@ -125,7 +125,10 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray) {
+  return [numbersArray.filter((num) => num % 2 === 0), 
+    numbersArray.filter((num) => num % 2 !== 0)]
+}
 
 
 
@@ -147,7 +150,16 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(arr) {
+  let randomNumber = (getRandomArbitrary)
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === randomNumber()) {
+      return true
+    }
+  }
+  return false
+}
+
 
 
 
@@ -176,7 +188,28 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList, item) {
+  if (item && myGroceryList.length !== 0) {
+    for (var i = 0; i < myGroceryList.length; i++) {
+      if (myGroceryList[i] === item) {
+        myGroceryList.splice(i, 1) 
+      }
+    }
+  }else {
+    return []
+  }
+  return myGroceryList
+}
+
+
+function addItem(myGroceryList, item) {
+  if (!item || !myGroceryList) {
+    return []
+  }else {
+  myGroceryList.push(item)
+  }
+return myGroceryList
+}
 
 
 
@@ -186,7 +219,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker() {
+  let arr = []
+  for (var i = 1; i <= 215; i++) {
+    arr.push(i)
+  }
+  return arr
+}
 
 
 
@@ -202,7 +241,12 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers) {
+  for (var i = 0; i < numbers.length; i++) {
+    numbers[i] = parseInt(numbers[i]) + 10
+  }
+  return numbers
+}
 
 
 
@@ -227,7 +271,15 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
+function longer(arr1, arr2) {
+  if (Array.isArray(arr1) && Array.isArray(arr2)) {
+    if (arr1.length >= arr2.length) {
+      return arr1
+    }else if (arr2.length > arr1.length) {
+      return arr2
+    }
+  }
+}
 
 
 
@@ -239,7 +291,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1, arr2) {
+  let newArr = []
+  for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        newArr.push(arr1[i])
+      }
+    }
+  }
+  return newArr
+}
 
 
 
@@ -279,7 +341,8 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees.push(joe, cahlan, ryan, colt)
+
 
 
 
@@ -288,7 +351,11 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for (var i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1)
+  }
+}
 
 
 
@@ -300,7 +367,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = []
 
 
 
@@ -318,10 +385,20 @@ var user1 = {
     username: 'ihazcode'
 };
 // Do not edit the code above.
-
-//Code Here
-
-
+var temp = {
+  name: '',
+  email: '',
+  password: '' ,
+  username: ''
+};
+function addUsers() {
+  for (var i = 1; i <= 3; i++) {
+    users.push(temp, user1)
+  }
+  users.push(user1)
+}
+addUsers(temp, user1)
+console.log(users)
 
 /*
   Now you have a very common data structure. 
